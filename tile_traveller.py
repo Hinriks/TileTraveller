@@ -40,6 +40,7 @@ def invalid_direction():
 
 def allowed_movements(x, y, w, e, s, n):
     print ("You can travel: ", end="")
+    string = ""
     if x > 1:
         if x == 3 and y == 2:
             w = False
@@ -48,7 +49,7 @@ def allowed_movements(x, y, w, e, s, n):
         elif x == 2 and y == 1:
             w = False
         else:
-            print("(W)est", end=" ")
+            string += "(W)est or "
     else:
         w = False
     if x < 3:
@@ -59,23 +60,24 @@ def allowed_movements(x, y, w, e, s, n):
         elif x == 2 and y == 2:
             e = False
         else:
-            print("(E)ast", end=" ")
+            string += "(E)ast or "
     else:
         e = False
     if y > 1:
         if x == 2 and y == 3:
             s = False
         else:
-            print("(S)outh", end=" ")
+            string += "(S)outh or "
     else:
         s = False
     if y < 3:
         if x == 2 and y == 2:
             n = False
         else:
-            print("(N)orth", end=" ")
+            string += "(N)orth or "
     else:
         n = False
+    print (string[:-4], end="")
     print (".")
 
     return w,e,s,n
