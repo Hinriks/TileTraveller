@@ -8,24 +8,10 @@ Leikmaður byrjar á reit 1,1 og vinnur leikinn á reit 3,1.
 x_pos = 1
 y_pos = 1
 
-
-"""def position_checker(x, y):
-
-    if y == 1:
-        y += 1
-    elif y == 2:
-        if x == 2:
-            x -= 1
-            y -= 1
-        elif x == 3:
-            y += 1
-            y -= 1
-    elif y == 3:
-        if x== 2:
-            x += 1 
-            x -= 1
-    """
-
+west = True
+east = True
+south = True
+north = True
 
 def check_victory(x, y):
     if x == 3 and y == 1:
@@ -49,28 +35,8 @@ def grid_border_checker(x, y):
     
     return x,y
 
-def grid_wall_checker(x, y):
-    """if y == 1:
-        
-    elif y == 2:
-        if x == 2:
-            x -= 1
-            y -= 1
-        elif x == 3:
-            y += 1
-            y -= 1
-    elif y == 3:
-        if x== 2:
-            x += 1 
-            x -= 1"""
-
 def invalid_direction():
     print("Not a valid direction!")
-
-west = True
-east = True
-south = True
-north = True
 
 def allowed_movements(x, y, w, e, s, n):
     print ("You can travel: ", end="")
@@ -136,9 +102,3 @@ while True:
         print ("Victory!")
     
     west,east,south,north = True,True,True,True
-
-
-
-"""while available position is entered
-    change position
-    if not do not change position and print unavailable"""
